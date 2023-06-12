@@ -41,7 +41,7 @@ class KnowledgeText extends StatelessWidget {
       child: Row(
         children: [SvgPicture.asset("icons/check.svg"),
           SizedBox(width: defaultPadding/2,),
-          Text(text,),
+          Flexible(child: Text(text,)),
         ],
       ),
     );

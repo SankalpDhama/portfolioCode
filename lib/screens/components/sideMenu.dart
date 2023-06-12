@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/constants.dart';
 import 'package:portfolio/screens/components/skills.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../components/animated_progress_indicator.dart';
 import 'coding.dart';
@@ -10,10 +11,19 @@ import 'myInfo.dart';
 import 'area_info.dart';
 
 class SideMenu extends StatelessWidget {
-  const SideMenu({
+  SideMenu({
     Key? key,
   }) : super(key: key);
-
+  final Uri _linkedin = Uri.parse('https://www.linkedin.com/in/sankalp-dhama-31ba45204/');
+  final Uri _leetcode = Uri.parse('https://leetcode.com/sankalp_dhama/');
+  final Uri _facebook = Uri.parse('https://www.facebook.com/sankalp.dhama');
+  final Uri _twitter = Uri.parse('hhttps://www.twitter.com/sankalpdhama');
+  final Uri _github = Uri.parse('https://github.com/SankalpDhama');
+  Future<void> _launchUrl(Uri url) async {
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -67,13 +77,13 @@ class SideMenu extends StatelessWidget {
                       child:Row(
                         children: [
                           Spacer(),
-                          IconButton(onPressed: (){}, icon: SvgPicture.asset("icons/linkedin.svg"),
+                          IconButton(onPressed: () => _launchUrl(_linkedin), icon: SvgPicture.asset("icons/linkedin.svg"),
                           ),
-                          IconButton(onPressed: (){}, icon: SvgPicture.asset("icons/github.svg"),
+                          IconButton(onPressed: ()=>_launchUrl(_github), icon: SvgPicture.asset("icons/github.svg"),
                           ),
-                          IconButton(onPressed: (){}, icon: SvgPicture.asset("icons/dribble.svg"),
+                          IconButton(onPressed: ()=>_launchUrl(_leetcode), icon: SvgPicture.asset("icons/dribble.svg"),
                           ),
-                          IconButton(onPressed: (){}, icon: SvgPicture.asset("icons/twitter.svg"),
+                          IconButton(onPressed: ()=>_launchUrl(_facebook), icon: SvgPicture.asset("icons/twitter.svg"),
                           ),
                           Spacer(),
                         ],
