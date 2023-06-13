@@ -10,10 +10,10 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple,
+      // backgroundColor: Colors.purple,
       body: Center(
         child: Container(
-          constraints: BoxConstraints(maxWidth: maxWidth),
+          constraints: const BoxConstraints(maxWidth: maxWidth),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -21,6 +21,7 @@ class MainScreen extends StatelessWidget {
                 flex: 2,
                 child: SideMenu(),
               ),
+              // Spacer(flex: 1,),
               Expanded(
                 flex: 7,
                 child: SingleChildScrollView(child: Column(
