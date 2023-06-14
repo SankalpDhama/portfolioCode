@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/screens/home/components/home_banner.dart';
+import 'package:github_io/screens/home/components/home_banner.dart';
 import 'constants.dart';
 import 'main/main_screen.dart';
 import 'screens/home/home_screen.dart';
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Sankalp Portfolio',
+      title: 'Sankalp github_io',
       theme: ThemeData.dark().copyWith(
         primaryColor: primaryColor,
         scaffoldBackgroundColor: bgColor,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/constants.dart';
-import 'package:portfolio/screens/components/skills.dart';
+import 'package:github_io/constants.dart';
+import 'package:github_io/screens/components/skills.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../components/animated_progress_indicator.dart';

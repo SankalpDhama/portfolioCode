@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/main/main_screen.dart';
+import 'package:github_io/main/main_screen.dart';
 import 'components/MyProject.dart';
 import 'components/Recommendations.dart';
 import 'components/highlightInfo.dart';

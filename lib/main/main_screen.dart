@@ -1,7 +1,7 @@
-import 'package:portfolio/constants.dart';
+import 'package:github_io/constants.dart';
 
 import 'package:flutter/material.dart';
-import 'package:portfolio/responsive.dart';
+import 'package:github_io/responsive.dart';
 
 import '../screens/components/sideMenu.dart';
 

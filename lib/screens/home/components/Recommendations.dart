@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/home/components/recommendationCard.dart';
+import 'package:github_io/screens/home/components/recommendationCard.dart';
 
 import '../../../constants.dart';
 import '../../../models/Recommendations.dart';
