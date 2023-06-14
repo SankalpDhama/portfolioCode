@@ -77,13 +77,13 @@ class SideMenu extends StatelessWidget {
                       child:Row(
                         children: [
                           Spacer(),
-                          IconButton(onPressed: () => _launchUrl(_linkedin), icon: SvgPicture.asset("icons/linkedin.svg"),
+                          IconButton(onPressed: () => _launchUrl(_linkedin), icon: SvgPicture.asset("icons/logos/linkedin.svg"),
                           ),
-                          IconButton(onPressed: ()=>_launchUrl(_github), icon: SvgPicture.asset("icons/github.svg"),
+                          IconButton(onPressed: ()=>_launchUrl(_github), icon: SvgPicture.asset("icons/logos/github.svg"),
                           ),
-                          IconButton(onPressed: ()=>_launchUrl(_leetcode), icon: SvgPicture.asset("icons/dribble.svg"),
+                          IconButton(onPressed: ()=>_launchUrl(_leetcode), icon: SvgPicture.asset("icons/logos/leetcode.svg"),
                           ),
-                          IconButton(onPressed: ()=>_launchUrl(_facebook), icon: SvgPicture.asset("icons/twitter.svg"),
+                          IconButton(onPressed: ()=>_launchUrl(_facebook), icon: SvgPicture.asset("icons/logos/facebook.svg"),
                           ),
                           Spacer(),
                         ],
