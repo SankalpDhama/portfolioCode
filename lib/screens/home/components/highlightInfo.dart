@@ -16,10 +16,12 @@ class HighlightsInfo extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          SizedBox(width: defaultPadding,),
           highLight(counter: AnimatedCounter(value: 30,text: "+",),label: "subscibers",),
           highLight(counter: AnimatedCounter(value: 40,text: "+",),label: "videos",),
           highLight(counter: AnimatedCounter(value: 80,text: "+",),label: "projects",),
           highLight(counter: AnimatedCounter(value: 69,text: "+",),label: "bitches",),
+          SizedBox(width: defaultPadding,),
         ],
       ),
     );

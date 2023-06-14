@@ -11,7 +11,7 @@ class MyProjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           "My Projects",
@@ -25,12 +25,12 @@ class MyProjects extends StatelessWidget {
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             childAspectRatio: 1.3,
-            crossAxisSpacing: defaultPadding,
-            mainAxisSpacing: defaultPadding,
+            // crossAxisSpacing: defaultPadding,
+            // mainAxisSpacing: defaultPadding,
           ),
           itemBuilder: (context, index) => ProjectCard(
-            project: demo_projects[index],
-          ),
+              project: demo_projects[index],
+            ),
         ),
       ],
     );
