@@ -16,9 +16,8 @@ class HomeBanner extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(
-            "images/SanWall.jpg",
-            fit: BoxFit.cover,
+          Image.network(
+            "https://images.unsplash.com/photo-1692367764006-f940d670a235?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1009&q=80",            fit: BoxFit.cover,
           ),
           Container(
             color: darkColor.withOpacity(0.66),
@@ -30,7 +29,7 @@ class HomeBanner extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Discover \nSankalp",
+                  "Discover \nMy World",
                   style: Responsive.isDesktop(context)?Theme.of(context).textTheme.headline3!.copyWith(
                       fontWeight: FontWeight.bold, color: Colors.white):Theme.of(context).textTheme.headline6!.copyWith(
                       fontWeight: FontWeight.bold, color: Colors.white),
