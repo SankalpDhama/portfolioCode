@@ -12,16 +12,18 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("bheesh"),
-        // backgroundColor: bgColor,
-        leading: Builder(builder: (context)=>IconButton(
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-          icon: Icon(Icons.menu),
-        ),)
+        title: Text("Sankalp Dhama"),
+        backgroundColor: Color(0xFF242430),
+        // leading: Builder(
+        //   builder: (context) => IconButton(
+        //     onPressed: () {
+        //       Scaffold.of(context).openDrawer();
+        //     },
+        //     icon: Icon(Icons.safety_check),
+        //   ),
+        // ),
       ),
-      drawer: SideMenu(),
+      drawer: Responsive.isDesktop(context)?null : SideMenu(),
       // backgroundColor: Colors.purple,
       body: Center(
         child: Container(
@@ -29,6 +31,11 @@ class MainScreen extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (Responsive.isDesktop(context))
+                Expanded(
+                  flex: 2,
+                  child: SideMenu(),
+                ),
               Expanded(
                 flex: 7,
                 child: SingleChildScrollView(

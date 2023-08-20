@@ -29,8 +29,8 @@ class skills extends StatelessWidget {
           children: [
             Expanded(
               child: animatedProgressBar(
-                percentage: 0.7,
-                label: "flutter",
+                percentage: 0.9,
+                label: "Front End",
               ),
             ),
             SizedBox(
@@ -39,7 +39,7 @@ class skills extends StatelessWidget {
             Expanded(
               child: animatedProgressBar(
                 percentage: 0.8,
-                label: "fireBase",
+                label: "Back End",
               ),
             ),
             SizedBox(
@@ -47,8 +47,8 @@ class skills extends StatelessWidget {
             ),
             Expanded(
               child: animatedProgressBar(
-                percentage: 0.5,
-                label: "RestApi",
+                percentage: 0.75,
+                label: "Database",
               ),
             ),
           ],

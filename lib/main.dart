@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Sankalp github_io',
+      title: 'Sankalp Dhama',
       theme: ThemeData.dark().copyWith(
+        appBarTheme: AppBarTheme(elevation: 0),
         primaryColor: primaryColor,
         scaffoldBackgroundColor: bgColor,
         canvasColor: bgColor,

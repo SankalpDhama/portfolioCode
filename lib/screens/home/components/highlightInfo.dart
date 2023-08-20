@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_io/responsive.dart';
 
 import '../../../components/AnimatedCounter.dart';
 import '../../../constants.dart';
@@ -13,18 +14,89 @@ class HighlightsInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(width: defaultPadding,),
-          highLight(counter: AnimatedCounter(value: 30,text: "+",),label: "subscibers",),
-          highLight(counter: AnimatedCounter(value: 40,text: "+",),label: "videos",),
-          highLight(counter: AnimatedCounter(value: 80,text: "+",),label: "projects",),
-          highLight(counter: AnimatedCounter(value: 69,text: "+",),label: "bitches",),
-          SizedBox(width: defaultPadding,),
-        ],
-      ),
+      child: Responsive.isMobileLarge(context)
+          ? Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    highLight(
+                      counter: AnimatedCounter(
+                        value: 10,
+                        text: "+",
+                      ),
+                      label: "blogs",
+                    ),
+                    highLight(
+                      counter: AnimatedCounter(
+                        value: 7,
+                        text: "+",
+                      ),
+                      label: "projects",
+                    ),
+                  ],
+                ),
+                const SizedBox(height: defaultPadding,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    highLight(
+                      counter: AnimatedCounter(
+                        value: 400,
+                        text: "+",
+                      ),
+                      label: "Problem Solving",
+                    ),
+                    highLight(
+                      counter: AnimatedCounter(
+                        value: 1000,
+                        text: "+",
+                      ),
+                      label: "Rating",
+                    ),
+                  ],
+                )
+              ],
+            )
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: defaultPadding,
+                ),
+                highLight(
+                  counter: AnimatedCounter(
+                    value: 10,
+                    text: "+",
+                  ),
+                  label: "blogs",
+                ),
+                highLight(
+                  counter: AnimatedCounter(
+                    value: 7,
+                    text: "+",
+                  ),
+                  label: "projects",
+                ),
+                highLight(
+                  counter: AnimatedCounter(
+                    value: 400,
+                    text: "+",
+                  ),
+                  label: "Problem Solving",
+                ),
+                highLight(
+                  counter: AnimatedCounter(
+                    value: 1000,
+                    text: "+",
+                  ),
+                  label: "Rating",
+                ),
+                SizedBox(
+                  width: defaultPadding,
+                ),
+              ],
+            ),
     );
   }
 }
-

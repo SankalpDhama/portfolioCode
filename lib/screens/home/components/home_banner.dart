@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:github_io/responsive.dart';
 
 import '../../../constants.dart';
 
@@ -11,7 +12,7 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 3,
+      aspectRatio: Responsive.isMobile(context)?2:3,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -29,13 +30,15 @@ class HomeBanner extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Discover \nBheesh",
-                  style: Theme.of(context).textTheme.headline3!.copyWith(
+                  "Discover \nSankalp",
+                  style: Responsive.isDesktop(context)?Theme.of(context).textTheme.headline3!.copyWith(
+                      fontWeight: FontWeight.bold, color: Colors.white):Theme.of(context).textTheme.headline6!.copyWith(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ),
+                if(Responsive.isMobileLarge(context)) const SizedBox(height: defaultPadding/2,),
                 AnimatedTextWidget(),
                 SizedBox(height: defaultPadding),
-                ElevatedButton(
+                if(!Responsive.isMobileLarge(context))ElevatedButton(
                   onPressed: () {},
                   style: TextButton.styleFrom(
                       padding: EdgeInsets.symmetric(
@@ -61,26 +64,38 @@ class AnimatedTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTextStyle(
+      maxLines: 1,
       style: Theme.of(context).textTheme.subtitle1!,
       child: Row(
         children: [
-          FlutterYellowText(),
-          SizedBox(width: defaultPadding / 2),
+          if(!Responsive.isMobileLarge(context))FlutterYellowText(),
+          if(!Responsive.isMobileLarge(context))SizedBox(width: defaultPadding / 2),
           Text("I build "),
-          AnimatedTextKit(
-            animatedTexts: [
-              TyperAnimatedText("Responsive site",
-                  speed: Duration(milliseconds: 60)),
-              TyperAnimatedText("complete website",
-                  speed: Duration(milliseconds: 60)),
-              TyperAnimatedText("chat app with backend",
-                  speed: Duration(milliseconds: 60)),
-            ],
-          ),
-          SizedBox(width: defaultPadding / 2),
-          FlutterYellowText(),
+          Responsive.isMobile(context)?Expanded(child: AnimatedText()):AnimatedText(),
+          if(!Responsive.isMobileLarge(context))SizedBox(width: defaultPadding / 2),
+          if(!Responsive.isMobileLarge(context))FlutterYellowText(),
         ],
       ),
+    );
+  }
+}
+
+class AnimatedText extends StatelessWidget {
+  const AnimatedText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedTextKit(
+      animatedTexts: [
+        TyperAnimatedText("Responsive site",
+            speed: Duration(milliseconds: 60)),
+        TyperAnimatedText("complete website",
+            speed: Duration(milliseconds: 60)),
+        TyperAnimatedText("chat app with backend",
+            speed: Duration(milliseconds: 60)),
+      ],
     );
   }
 }

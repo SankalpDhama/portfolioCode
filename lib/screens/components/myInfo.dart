@@ -25,10 +25,13 @@ class myInfo extends StatelessWidget {
               style: Theme.of(context).textTheme.subtitle2,
             ),
             Spacer(),
-            Text(
-              "Third Year Student At USICT",
-              textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.w200, height: 1.5),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                "I am a 4th-year B.Tech student studing from University School of Information, Communication and Technology  ",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.w200, height: 1.0),
+              ),
             ),
             Spacer(flex: 2),
           ],

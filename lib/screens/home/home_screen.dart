@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         HomeBanner(),
         HighlightsInfo(),
         MyProjects(),
-        Recommendations(),
+        // Recommendations(),
       ],
     );
   }
